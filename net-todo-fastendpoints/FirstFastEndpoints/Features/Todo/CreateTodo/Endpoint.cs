@@ -9,11 +9,10 @@ namespace FirstFastEndpoints.Features.Todo.CreateTodo
     {
 
         public override void Configure()
-        {          
+        {
             Post("/todos");
             AllowAnonymous();
             PreProcessor<LoggiingPreProcessor<CreateTodoRequest>>();
-
 
             Throttle(hitLimit: 20, durationSeconds: 60);
 

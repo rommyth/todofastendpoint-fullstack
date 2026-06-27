@@ -1,36 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyData\\Projects\\Fulstack\\net-todo-fastendpoints\\FirstFastEndpoints\\FirstFastEndpoints.csproj": {}
+    "/Volumes/Data/Kerja/Project/Fullstack/todofastendpoint-fullstack/net-todo-fastendpoints/FirstFastEndpoints/FirstFastEndpoints.csproj": {}
   },
   "projects": {
-    "D:\\MyData\\Projects\\Fulstack\\net-todo-fastendpoints\\FirstFastEndpoints\\FirstFastEndpoints.csproj": {
+    "/Volumes/Data/Kerja/Project/Fullstack/todofastendpoint-fullstack/net-todo-fastendpoints/FirstFastEndpoints/FirstFastEndpoints.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyData\\Projects\\Fulstack\\net-todo-fastendpoints\\FirstFastEndpoints\\FirstFastEndpoints.csproj",
+        "projectUniqueName": "/Volumes/Data/Kerja/Project/Fullstack/todofastendpoint-fullstack/net-todo-fastendpoints/FirstFastEndpoints/FirstFastEndpoints.csproj",
         "projectName": "FirstFastEndpoints",
-        "projectPath": "D:\\MyData\\Projects\\Fulstack\\net-todo-fastendpoints\\FirstFastEndpoints\\FirstFastEndpoints.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\MyData\\Projects\\Fulstack\\net-todo-fastendpoints\\FirstFastEndpoints\\obj\\",
+        "projectPath": "/Volumes/Data/Kerja/Project/Fullstack/todofastendpoint-fullstack/net-todo-fastendpoints/FirstFastEndpoints/FirstFastEndpoints.csproj",
+        "packagesPath": "/Users/kharomi/.nuget/packages/",
+        "outputPath": "/Volumes/Data/Kerja/Project/Fullstack/todofastendpoint-fullstack/net-todo-fastendpoints/FirstFastEndpoints/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/kharomi/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
-            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {}
           }
@@ -45,11 +38,10 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net10.0": {
-          "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
             "EFCore.NamingConventions": {
@@ -57,6 +49,10 @@
               "version": "[10.0.1, )"
             },
             "FastEndpoints": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
+            "FastEndpoints.Security": {
               "target": "Package",
               "version": "[8.1.0, )"
             },
@@ -106,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
