@@ -1,0 +1,129 @@
+[
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__2_2",
+    "RelativePath": "api/todos",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[FirstFastEndpoints.Features.Todo.GetAllTodos.GetAllTodoResponse, FirstFastEndpoints, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "FirstFastEndpointsFeaturesTodoGetAllTodosGetAllTodoEndpoint"
+  },
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__2_2",
+    "RelativePath": "api/todos",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CreateTodoRequest",
+        "Type": "FirstFastEndpoints.Features.Todo.CreateTodo.CreateTodoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FirstFastEndpoints.Features.Todo.CreateTodo.CreateTodoResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "EndpointName": "FirstFastEndpointsFeaturesTodoCreateTodoCreateTodoEndpoint"
+  },
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__2_2",
+    "RelativePath": "api/todos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UpdateTodoRequest",
+        "Type": "FirstFastEndpoints.Features.Todo.UpdateTodo.UpdateTodoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FirstFastEndpoints.Features.Todo.UpdateTodo.UpdateTodoResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "FirstFastEndpointsFeaturesTodoUpdateTodoUpdateTodoEndpoint"
+  },
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__2_2",
+    "RelativePath": "api/todos/{id}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "GetTodoByIdRequest",
+        "Type": "FirstFastEndpoints.Features.Todo.GetTodoById.GetTodoByIdRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FirstFastEndpoints.Features.Todo.GetTodoById.GetTodoByIdResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 404
+      }
+    ],
+    "EndpointName": "FirstFastEndpointsFeaturesTodoGetTodoByIdGetTodoByIdEndpoint"
+  },
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__2_2",
+    "RelativePath": "api/todos/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "FirstFastEndpoints.Features.Todo.DeleteTodo.DeleteTodoResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "FirstFastEndpointsFeaturesTodoDeleteTodoDeleteTodoEndpoint"
+  }
+]
