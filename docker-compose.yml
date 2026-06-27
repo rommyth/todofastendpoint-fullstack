@@ -1,0 +1,10 @@
+services:
+  backend:
+    build: ./net-todo-fastendpoints
+    ports:
+      - "5030:5030"
+
+  frontend:
+    build: ./client-todo-fastendpoints
+    ports:
+      - "8000:80"
