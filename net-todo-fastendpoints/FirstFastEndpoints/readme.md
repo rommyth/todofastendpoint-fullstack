@@ -1,23 +1,31 @@
-FastEndpoints Starter 
-
+FastEndpoints Starter
 
 ### List Package
-- FastEndpoints (8.1.0)
-- FastEndpoints.Swagger (8.1.0)
-- Scalar.AspNetCore (2.14.14)
+
+Top-level Package Requested Resolved
+
+- > EFCore.NamingConventions 10.0.1
+- > FastEndpoints 8.1.0
+- > FastEndpoints.Security 8.1.0
+- > FastEndpoints.Swagger 8.1.0
+- > Microsoft.EntityFrameworkCore 10.0.9
+- > Microsoft.EntityFrameworkCore.Design 10.0.9
+- > Microsoft.EntityFrameworkCore.InMemory 10.0.9
+- > Microsoft.VisualStudio.Azure.Containers.Tools.Targets 1.23.0
+- > Scalar.AspNetCore 2.14.14
 
 ### List What i have already Done
-- **Project Infrastructure**:
-    - Configured FastEndpoints and Response Caching in `Program.cs`.
-    - Integrated Scalar for OpenAPI documentation and UI.
-    - Implemented `LoggiingPreProcessor` for request logging.
-- **Domain**:
-    - Defined `TodoItem` entity.
-- **Features (Todo)**:
-    - `CreateTodo`: Implemented endpoint with request/response mapping and validator.
-    - `GetAllTodos`: Implemented endpoint to retrieve all todo items.
-    - `DeleteTodo` & `UpdateTodo`: Created folder structure for upcoming features.
 
+- **Project Infrastructure**:
+  - Configured FastEndpoints and Response Caching in `Program.cs`.
+  - Integrated Scalar for OpenAPI documentation and UI.
+  - Implemented `LoggiingPreProcessor` for request logging.
+- **Domain**:
+  - Defined `TodoItem` entity.
+- **Features (Todo)**:
+  - `CreateTodo`: Implemented endpoint with request/response mapping and validator.
+  - `GetAllTodos`: Implemented endpoint to retrieve all todo items.
+  - `DeleteTodo` & `UpdateTodo`: Created folder structure for upcoming features.
 
 ## Structure Folder
 
@@ -78,38 +86,38 @@ Folder Structure
 src/
 
 ├── Api/
-│   ├── Extensions/
-│   ├── Middlewares/
-│   └── Program.cs
+│ ├── Extensions/
+│ ├── Middlewares/
+│ └── Program.cs
 │
 ├── Domain/
-│   ├── Entities/
-│   ├── Enums/
-│   ├── ValueObjects/
-│   └── Common/
+│ ├── Entities/
+│ ├── Enums/
+│ ├── ValueObjects/
+│ └── Common/
 │
 ├── Infrastructure/
-│   ├── Persistence/
-│   │   ├── AppDbContext.cs
-│   │   └── Configurations/
-│   │
-│   ├── Services/
-│   ├── Repositories/
-│   └── Identity/
+│ ├── Persistence/
+│ │ ├── AppDbContext.cs
+│ │ └── Configurations/
+│ │
+│ ├── Services/
+│ ├── Repositories/
+│ └── Identity/
 │
 └── Features/
-    ├── Auth/
-    │
-    │   ├── Login/
-    │   ├── Register/
-    │   └── RefreshToken/
-    │
-    ├── Users/
-    │   ├── CreateUser/
-    │   ├── GetUser/
-    │   └── UpdateUser/
-    │
-    └── Products/
+├── Auth/
+│
+│ ├── Login/
+│ ├── Register/
+│ └── RefreshToken/
+│
+├── Users/
+│ ├── CreateUser/
+│ ├── GetUser/
+│ └── UpdateUser/
+│
+└── Products/
 
 ---
 
@@ -141,9 +149,10 @@ Contoh:
 
 public class User
 {
-    public Guid Id { get; set; }
+public Guid Id { get; set; }
 
     public string Name { get; set; } = string.Empty;
+
 }
 
 Domain tidak boleh mengetahui database.
@@ -178,7 +187,7 @@ Contoh:
 Features/
 
 └── Users/
-    └── CreateUser/
+└── CreateUser/
 
 Isi:
 
@@ -199,8 +208,8 @@ Endpoint Pattern
 Request
 
 public record CreateUserRequest(
-    string Name,
-    string Email
+string Name,
+string Email
 );
 
 ---
@@ -224,8 +233,8 @@ public class CreateUserHandler
 Response
 
 public record CreateUserResponse(
-    Guid Id,
-    string Name
+Guid Id,
+string Name
 );
 
 ---
@@ -240,12 +249,13 @@ Contoh:
 
 public class CreateUserHandler
 {
-    private readonly AppDbContext _db;
+private readonly AppDbContext _db;
 
     public CreateUserHandler(AppDbContext db)
     {
         _db = db;
     }
+
 }
 
 Hindari membuat repository hanya untuk membungkus:
@@ -297,9 +307,9 @@ lib/
 │
 ├── features/
 │
-│   ├── auth/
-│   ├── users/
-│   └── products/
+│ ├── auth/
+│ ├── users/
+│ └── products/
 │
 └── main.dart
 

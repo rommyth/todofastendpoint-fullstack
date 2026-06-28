@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FirstFastEndpoints.Features.Todo.GetTodoById
 {
-    public class GetTodoByIdEndpoint(AppDbContext db): Endpoint<GetTodoByIdRequest, GetTodoByIdResponse>
+    public class GetTodoByIdEndpoint(AppDbContext db) : Endpoint<GetTodoByIdRequest, GetTodoByIdResponse>
     {
         public override void Configure()
         {
             Get("/todos/{id}");
             AllowAnonymous();
-            
+
             Description(o => o
                  .Produces<GetTodoByIdResponse>(200)
                  .ProducesProblem(404)
@@ -27,10 +27,12 @@ namespace FirstFastEndpoints.Features.Todo.GetTodoById
                     Title = q.Title,
                     Description = q.Description,
                     IsCompleted = q.IsCompleted,
+                    UserId = q.UserId,
+                    UserName = q.User.Name,
                     CreatedAt = q.CreatedAt,
                     UpdatedAt = q.UpdatedAt
                 }).FirstOrDefaultAsync(ct);
-            
+
             if (result is null)
             {
                 await Send.NotFoundAsync(ct);

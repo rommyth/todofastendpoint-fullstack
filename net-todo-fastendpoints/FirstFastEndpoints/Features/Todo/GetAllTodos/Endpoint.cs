@@ -5,15 +5,16 @@ using Microsoft.EntityFrameworkCore;
 namespace FirstFastEndpoints.Features.Todo.GetAllTodos
 {
     public class GetAllTodoEndpoint(AppDbContext db) : EndpointWithoutRequest<List<GetAllTodoResponse>>
-    {        
+    {
         public override void Configure()
         {
             Get("/todos");
             AllowAnonymous();
 
 
-            Summary(s => {
-                s.Description = "Somehow there any description here to get All Todos";                     
+            Summary(s =>
+            {
+                s.Description = "Somehow there any description here to get All Todos";
             });
         }
 
@@ -22,13 +23,14 @@ namespace FirstFastEndpoints.Features.Todo.GetAllTodos
             var result = await db.TodoItem
                 .AsNoTracking()
                 .Select(q => new GetAllTodoResponse
-            {
-                Id = q.Id,
-                Title = q.Title,
-                IsCompleted = q.IsCompleted,
-                CreatedAt = q.CreatedAt,
-                UpdatedAt = q.UpdatedAt
-            }).ToListAsync(ct);
+                {
+                    Id = q.Id,
+                    Title = q.Title,
+                    IsCompleted = q.IsCompleted,
+                    UserId = q.UserId,
+                    CreatedAt = q.CreatedAt,
+                    UpdatedAt = q.UpdatedAt
+                }).ToListAsync(ct);
 
             await Send.OkAsync(result, ct);
         }

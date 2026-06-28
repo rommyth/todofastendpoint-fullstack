@@ -6,8 +6,9 @@
         public string Title { get; set; } = String.Empty;
         public string Description { get; set; } = String.Empty;
         public bool IsCompleted { get; set; }
+        public Guid UserId { get; set; }
+        public string? UserName { get; set; }
         public DateTime CreatedAt { get; set; }
-
         public DateTime UpdatedAt { get; set; }
     }
 }

@@ -1,17 +1,18 @@
-﻿using FastEndpoints;
+﻿using System.Security.Claims;
+using FastEndpoints;
 using FirstFastEndpoints.Domain.Entities;
 using FirstFastEndpoints.Infrastructure;
 using FirstFastEndpoints.Shared.PreProcessors;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace FirstFastEndpoints.Features.Todo.CreateTodo
 {
     public class CreateTodoEndpoint(AppDbContext db) : EndpointWithMapping<CreateTodoRequest, CreateTodoResponse, TodoItem>
     {
-
         public override void Configure()
         {
             Post("/todos");
-            AllowAnonymous();
+            AuthSchemes(JwtBearerDefaults.AuthenticationScheme);
             PreProcessor<LoggiingPreProcessor<CreateTodoRequest>>();
 
             Throttle(hitLimit: 20, durationSeconds: 60);
@@ -24,7 +25,11 @@ namespace FirstFastEndpoints.Features.Todo.CreateTodo
 
         public override async Task HandleAsync(CreateTodoRequest req, CancellationToken ct)
         {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)!.Value;
+
             var todoItem = MapToEntity(req);
+            todoItem.UserId = Guid.Parse(userId);
+
             db.TodoItem.Add(todoItem);
             await db.SaveChangesAsync(ct);
             var response = MapFromEntity(todoItem);
