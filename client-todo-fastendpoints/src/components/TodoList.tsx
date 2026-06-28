@@ -1,11 +1,20 @@
 import { useTodo } from '../store/todoStore';
+import { useAuth } from '../store/authStore';
 import type { Todo } from '../types/todo';
 import { useState, type FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const TodoList = () => {
   const { state, fetchTodo, createTodo, updateTodo, deleteTodo, clearSelected } = useTodo();
+  const { logout } = useAuth();
+  const navigate = useNavigate();
   const [editingTodo, setEditingTodo] = useState<Todo | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login', { replace: true });
+  };
 
   const handleCreateSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -53,6 +62,14 @@ export const TodoList = () => {
     <div className="min-h-screen bg-gradient-to-br from-[#0f0f13] via-[#16171d] to-[#1a1b23] text-white p-8">
       <div className="max-w-6xl mx-auto">
         <header className="mb-12 text-center">
+          <div className="flex justify-end mb-4">
+            <button
+              onClick={handleLogout}
+              className="px-4 py-2 bg-[#2e303a] hover:bg-[#3a3b45] text-gray-300 rounded-lg transition-colors text-sm"
+            >
+              Logout
+            </button>
+          </div>
           <h1 className="text-5xl font-bold mb-3 bg-gradient-to-r from-[#c084fc] to-[#e879f9] bg-clip-text text-transparent">
             Todo App
           </h1>
@@ -129,6 +146,7 @@ export const TodoList = () => {
               </div>
 
               <div className="flex flex-col gap-1 text-xs text-gray-500 mb-4">
+                {todo.userId && <span>User ID: {todo.userId}</span>}
                 <span>Created: {formatDate(todo.createdAt)}</span>
                 <span>Updated: {formatDate(todo.updatedAt)}</span>
               </div>
@@ -244,6 +262,22 @@ export const TodoList = () => {
                     </span>
                   </div>
                 </div>
+                {state.selectedTodo.userId && (
+                  <div>
+                    <label className="block text-xs font-medium text-gray-400 mb-1 uppercase tracking-wider">User ID</label>
+                    <div className="px-4 py-3 bg-[#16171d] border border-[#2e303a] rounded-lg text-gray-400 font-mono text-sm break-all">
+                      {state.selectedTodo.userId}
+                    </div>
+                  </div>
+                )}
+                {state.selectedTodo.userName && (
+                  <div>
+                    <label className="block text-xs font-medium text-gray-400 mb-1 uppercase tracking-wider">User Name</label>
+                    <div className="px-4 py-3 bg-[#16171d] border border-[#2e303a] rounded-lg text-white">
+                      {state.selectedTodo.userName}
+                    </div>
+                  </div>
+                )}
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-medium text-gray-400 mb-1 uppercase tracking-wider">Created</label>

@@ -1,4 +1,4 @@
-import type { Todo } from "../types/todo";
+import type { Todo, CreateTodo, UpdateTodo } from "../types/todo";
 
 export const TODO_ACTIONS = {
   GET_ALL: "GET_ALL",
@@ -104,11 +104,11 @@ const updateTodoInList = (todos: Todo[], updatedTodo: Todo): Todo[] => {
 
 export const todoActions = {
   getAll: () => ({ type: TODO_ACTIONS.GET_ALL }),
-  create: (todo: Omit<Todo, "id" | "createdAt" | "updatedAt">) => ({
+  create: (todo: CreateTodo) => ({
     type: TODO_ACTIONS.CREATE,
     payload: todo,
   }),
-  update: (id: string, todo: Partial<Todo>) => ({
+  update: (id: string, todo: UpdateTodo) => ({
     type: TODO_ACTIONS.UPDATE,
     payload: { id, todo },
   }),

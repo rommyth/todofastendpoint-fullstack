@@ -1,6 +1,6 @@
 import { createContext, useContext, type ReactNode, useState, useEffect, useCallback } from 'react';
 import { todosApi } from '../api/todos';
-import type { Todo } from '../types/todo';
+import type { Todo, UpdateTodo } from '../types/todo';
 
 interface TodoState {
   todos: Todo[];
@@ -14,7 +14,7 @@ interface TodoContextValue {
   fetchTodos: () => Promise<void>;
   fetchTodo: (id: string) => Promise<void>;
   createTodo: (title: string, description: string) => Promise<void>;
-  updateTodo: (id: string, updates: Partial<Todo>) => Promise<void>;
+  updateTodo: (id: string, updates: UpdateTodo) => Promise<void>;
   deleteTodo: (id: string) => Promise<void>;
   clearSelected: () => void;
 }
@@ -63,7 +63,7 @@ export const TodoProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [fetchTodos]);
 
-  const updateTodo = useCallback(async (id: string, updates: Partial<Todo>) => {
+  const updateTodo = useCallback(async (id: string, updates: UpdateTodo) => {
     setLoading();
     try {
       await todosApi.update(id, updates);
