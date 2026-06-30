@@ -40,6 +40,7 @@ namespace FirstFastEndpoints.Features.Auth.Login
                     o.SigningKey = configuration.GetValue<string>("Jwt:Key")!;
                     o.ExpireAt = DateTime.UtcNow.AddHours(1);
                     o.User.Claims.Add((ClaimTypes.NameIdentifier, user.Id.ToString()));
+                    o.User.Claims.Add(("jti", Guid.NewGuid().ToString()));
                 }
             );
 
@@ -48,7 +49,7 @@ namespace FirstFastEndpoints.Features.Auth.Login
                 {
                     AccessToken = jwtToken
                 },
-                ct
+                cancellation: ct
             );
         }
     }
