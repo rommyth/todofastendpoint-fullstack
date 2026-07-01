@@ -1,10 +1,11 @@
 ﻿using FastEndpoints;
 using FirstFastEndpoints.Infrastructure;
+using FirstFastEndpoints.Shared.Caching;
 using Microsoft.EntityFrameworkCore;
 
 namespace FirstFastEndpoints.Features.Todo.GetAllTodos
 {
-    public class GetAllTodoEndpoint(AppDbContext db) : EndpointWithoutRequest<List<GetAllTodoResponse>>
+    public class GetAllTodoEndpoint(AppDbContext db, ICacheService cache) : EndpointWithoutRequest<List<GetAllTodoResponse>>
     {
         public override void Configure()
         {
@@ -20,7 +21,15 @@ namespace FirstFastEndpoints.Features.Todo.GetAllTodos
 
         public override async Task HandleAsync(CancellationToken ct)
         {
-            var result = await db.TodoItem
+            var cacheKey = CacheKeys.TodoList;
+            var cachedTodos = await cache.GetAsync<List<GetAllTodoResponse>>(cacheKey);
+            if (cachedTodos is not null)
+            {
+                await Send.OkAsync(cachedTodos, ct);
+                return;
+            }
+
+            var todos = await db.TodoItem
                 .AsNoTracking()
                 .Select(q => new GetAllTodoResponse
                 {
@@ -32,8 +41,9 @@ namespace FirstFastEndpoints.Features.Todo.GetAllTodos
                     UpdatedAt = q.UpdatedAt
                 }).ToListAsync(ct);
 
-            await Send.OkAsync(result, ct);
-        }
+            await cache.SetAsync(CacheKeys.TodoList, todos, TimeSpan.FromSeconds(30));
 
+            await Send.OkAsync(todos, ct);
+        }
     }
 }

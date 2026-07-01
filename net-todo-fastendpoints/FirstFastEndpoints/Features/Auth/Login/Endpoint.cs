@@ -38,7 +38,7 @@ namespace FirstFastEndpoints.Features.Auth.Login
                 o =>
                 {
                     o.SigningKey = configuration.GetValue<string>("Jwt:Key")!;
-                    o.ExpireAt = DateTime.UtcNow.AddHours(1);
+                    o.ExpireAt = DateTime.UtcNow.AddMinutes(5);
                     o.User.Claims.Add((ClaimTypes.NameIdentifier, user.Id.ToString()));
                     o.User.Claims.Add(("jti", Guid.NewGuid().ToString()));
                 }

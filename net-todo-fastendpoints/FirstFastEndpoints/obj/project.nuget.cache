@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UCosZIcWulI=",
+  "dgSpecHash": "+Dlu7FoBvfI=",
   "success": true,
   "projectFilePath": "D:\\MyData\\Projects\\Fulstack\\todo-fastendpoints\\net-todo-fastendpoints\\FirstFastEndpoints\\FirstFastEndpoints.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "C:\\Users\\User\\.nuget\\packages\\microsoft.entityframeworkcore.design\\10.0.9\\microsoft.entityframeworkcore.design.10.0.9.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\10.0.9\\microsoft.entityframeworkcore.inmemory.10.0.9.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\10.0.9\\microsoft.entityframeworkcore.relational.10.0.9.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.caching.stackexchangeredis\\10.0.9\\microsoft.extensions.caching.stackexchangeredis.10.0.9.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.dependencymodel\\10.0.9\\microsoft.extensions.dependencymodel.10.0.9.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.0.1\\microsoft.identitymodel.abstractions.8.0.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.0.1\\microsoft.identitymodel.jsonwebtokens.8.0.1.nupkg.sha512",
@@ -51,7 +52,9 @@
     "C:\\Users\\User\\.nuget\\packages\\nswag.core.yaml\\14.6.3\\nswag.core.yaml.14.6.3.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\nswag.generation\\14.6.3\\nswag.generation.14.6.3.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\nswag.generation.aspnetcore\\14.6.3\\nswag.generation.aspnetcore.14.6.3.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\scalar.aspnetcore\\2.14.14\\scalar.aspnetcore.2.14.14.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\stackexchange.redis\\2.7.27\\stackexchange.redis.2.7.27.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.composition\\9.0.0\\system.composition.9.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.composition.attributedmodel\\9.0.0\\system.composition.attributedmodel.9.0.0.nupkg.sha512",

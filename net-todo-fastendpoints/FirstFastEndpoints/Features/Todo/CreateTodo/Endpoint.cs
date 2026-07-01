@@ -2,12 +2,13 @@
 using FastEndpoints;
 using FirstFastEndpoints.Domain.Entities;
 using FirstFastEndpoints.Infrastructure;
+using FirstFastEndpoints.Shared.Caching;
 using FirstFastEndpoints.Shared.PreProcessors;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace FirstFastEndpoints.Features.Todo.CreateTodo
 {
-    public class CreateTodoEndpoint(AppDbContext db) : EndpointWithMapping<CreateTodoRequest, CreateTodoResponse, TodoItem>
+    public class CreateTodoEndpoint(AppDbContext db, ICacheService cache) : EndpointWithMapping<CreateTodoRequest, CreateTodoResponse, TodoItem>
     {
         public override void Configure()
         {
@@ -29,7 +30,7 @@ namespace FirstFastEndpoints.Features.Todo.CreateTodo
 
             var todoItem = MapToEntity(req);
             todoItem.UserId = Guid.Parse(userId);
-
+            await cache.RemoveAsync(CacheKeys.TodoList);
             db.TodoItem.Add(todoItem);
             await db.SaveChangesAsync(ct);
             var response = MapFromEntity(todoItem);

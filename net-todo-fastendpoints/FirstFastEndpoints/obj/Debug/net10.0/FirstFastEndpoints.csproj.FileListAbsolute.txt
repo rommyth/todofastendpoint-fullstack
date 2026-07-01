@@ -587,3 +587,6 @@ D:\MyData\Projects\Fulstack\todo-fastendpoints\net-todo-fastendpoints\FirstFastE
 D:\MyData\Projects\Fulstack\todo-fastendpoints\net-todo-fastendpoints\FirstFastEndpoints\obj\Debug\net10.0\FirstFastEndpoints.pdb
 D:\MyData\Projects\Fulstack\todo-fastendpoints\net-todo-fastendpoints\FirstFastEndpoints\obj\Debug\net10.0\FirstFastEndpoints.genruntimeconfig.cache
 D:\MyData\Projects\Fulstack\todo-fastendpoints\net-todo-fastendpoints\FirstFastEndpoints\obj\Debug\net10.0\ref\FirstFastEndpoints.dll
+D:\MyData\Projects\Fulstack\todo-fastendpoints\net-todo-fastendpoints\FirstFastEndpoints\bin\Debug\net10.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+D:\MyData\Projects\Fulstack\todo-fastendpoints\net-todo-fastendpoints\FirstFastEndpoints\bin\Debug\net10.0\Pipelines.Sockets.Unofficial.dll
+D:\MyData\Projects\Fulstack\todo-fastendpoints\net-todo-fastendpoints\FirstFastEndpoints\bin\Debug\net10.0\StackExchange.Redis.dll

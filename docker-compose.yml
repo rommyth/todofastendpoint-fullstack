@@ -1,8 +1,12 @@
 services:
-  backend:
+  backend-1:
     build: ./net-todo-fastendpoints
     ports:
       - "5030:5030"
+  backend-2:
+    build: ./net-todo-fastendpoints
+    ports:
+      - "5031:5030"
 
   frontend:
     build: ./client-todo-fastendpoints
