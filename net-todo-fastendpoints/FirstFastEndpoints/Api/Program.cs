@@ -74,7 +74,7 @@ builder.Services
         s.Version = "v1";
     });
 
-builder.WebHost.UseUrls("http://0.0.0.0:5031");
+builder.WebHost.UseUrls("http://0.0.0.0:5030");
 
 var app = builder.Build();
 

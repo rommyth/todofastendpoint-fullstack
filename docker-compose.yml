@@ -6,7 +6,7 @@ services:
   backend-2:
     build: ./net-todo-fastendpoints
     ports:
-      - "5031:5030"
+      - "50301:5030"
 
   frontend:
     build: ./client-todo-fastendpoints
