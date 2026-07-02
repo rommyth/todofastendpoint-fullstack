@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  backend:
+    name: Backend Build
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: net-todo-fastendpoints/FristFastEndpoints
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: Restore backend dependecies
+        run: dotnet restore
+
+      - name: Build Backend
+        run: dotnet build --configuration Release --no-restore
+
+  frontend:
+    name: Frontned Build
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: client-todo-fastendpoints
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node js
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: client-todo-fastendpoints/package-lock.json
+
+      - name: Install frontend dependencies
+        run: npm ci
+
+      - name: Lint Frontend
+        run: npm run lint
+
+      - name: Build frontend
+        run: npm run buid
