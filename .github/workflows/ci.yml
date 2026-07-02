@@ -13,7 +13,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: net-todo-fastendpoints/FristFastEndpoints
+        working-directory: net-todo-fastendpoints/FirstFastEndpoints
 
     steps:
       - name: Checkout Repository
@@ -53,4 +53,4 @@ jobs:
         run: npm ci
 
       - name: Build frontend
-        run: npm run buid
+        run: npm run build
