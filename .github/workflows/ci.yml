@@ -54,3 +54,18 @@ jobs:
 
       - name: Build frontend
         run: npm run build
+
+  docker:
+    name: Build Docker
+    runs-on: ubuntu-latest
+    needs: [backend, frontend]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+
+      - name: Build Backend Docker Image
+        run: docker build -t todo-backend:ci ./net-todo-fastendpoints
+
+      - name: Build Frontend Docker Image
+        run: docker build -t todo-frontend:ci ./client-todo-fastendpoints
