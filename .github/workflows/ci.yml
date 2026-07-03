@@ -134,14 +134,14 @@ jobs:
 
   deploy:
     name: Deploy to Ubuntu VM
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: [docker-publish]
 
     # Deploy hanya berjalan setelah image berhasil dipush dari branch main.
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
     steps:
-      # GitHub runner akan SSH ke VM, lalu command di script dijalankan di VM.
+      # GitHub runner Self Hosted ke VM, lalu command di script dijalankan di VM.
       - name: Deploy with Docker Compose
         run: |
           cd ~/todofastendpoint-fullstack
