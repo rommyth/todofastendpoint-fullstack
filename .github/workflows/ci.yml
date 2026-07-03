@@ -142,15 +142,9 @@ jobs:
 
     steps:
       # GitHub runner akan SSH ke VM, lalu command di script dijalankan di VM.
-      - name: Deploy with SSH
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          script: |
-            cd ~/todofastendpoint-fullstack
-            echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u "${{ secrets.GHCR_USERNAME }}" --password-stdin
-            docker compose pull
-            docker compose up -d
+      - name: Deploy with Docker Compose
+        run: |
+          cd ~/todofastendpoint-fullstack
+          echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u "${{ secrets.GHCR_USERNAME }}" --password-stdin
+          docker compose pull
+          docker compose up -d
