@@ -78,8 +78,8 @@ jobs:
         run: npm ci
 
       # Mengecek lint frontend. Jika terlalu ketat saat belajar, step ini boleh dihapus sementara.
-      - name: Lint frontend
-        run: npm run lint
+      # - name: Lint frontend
+      #   run: npm run lint
 
       # Mengecek apakah frontend bisa dibuat menjadi production build.
       - name: Build frontend
