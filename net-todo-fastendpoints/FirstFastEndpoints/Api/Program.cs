@@ -6,7 +6,7 @@ using Scalar.AspNetCore;
 using FastEndpoints.Security;
 using FirstFastEndpoints.Shared.Caching;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-
+using Prometheus;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -79,6 +79,10 @@ builder.WebHost.UseUrls("http://0.0.0.0:5030");
 var app = builder.Build();
 
 app.UseAuthentication();
+
+// Prometheus
+// app.UseHttpMetrics();
+app.MapMetrics();
 
 app.UseResponseCaching()
    .UseFastEndpoints(config =>

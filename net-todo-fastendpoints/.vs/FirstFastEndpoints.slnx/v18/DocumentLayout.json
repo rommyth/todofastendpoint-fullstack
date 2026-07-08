@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\MyData\\Projects\\Fulstack\\todo-fastendpoints\\net-todo-fastendpoints\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BCEFDF02-F790-6F0C-DC54-AFEE4B8C2D12}|FirstFastEndpoints\\FirstFastEndpoints.csproj|d:\\mydata\\projects\\fulstack\\todo-fastendpoints\\net-todo-fastendpoints\\firstfastendpoints\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCEFDF02-F790-6F0C-DC54-AFEE4B8C2D12}|FirstFastEndpoints\\FirstFastEndpoints.csproj|solutionrelative:firstfastendpoints\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BCEFDF02-F790-6F0C-DC54-AFEE4B8C2D12}|FirstFastEndpoints\\FirstFastEndpoints.csproj|d:\\mydata\\projects\\fulstack\\todo-fastendpoints\\net-todo-fastendpoints\\firstfastendpoints\\features\\todo\\createtodo\\endpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BCEFDF02-F790-6F0C-DC54-AFEE4B8C2D12}|FirstFastEndpoints\\FirstFastEndpoints.csproj|solutionrelative:firstfastendpoints\\features\\todo\\createtodo\\endpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BCEFDF02-F790-6F0C-DC54-AFEE4B8C2D12}|FirstFastEndpoints\\FirstFastEndpoints.csproj|d:\\mydata\\projects\\fulstack\\todo-fastendpoints\\net-todo-fastendpoints\\firstfastendpoints\\features\\todo\\getalltodos\\endpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BCEFDF02-F790-6F0C-DC54-AFEE4B8C2D12}|FirstFastEndpoints\\FirstFastEndpoints.csproj|solutionrelative:firstfastendpoints\\features\\todo\\getalltodos\\endpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BCEFDF02-F790-6F0C-DC54-AFEE4B8C2D12}|FirstFastEndpoints\\FirstFastEndpoints.csproj|d:\\mydata\\projects\\fulstack\\todo-fastendpoints\\net-todo-fastendpoints\\firstfastendpoints\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BCEFDF02-F790-6F0C-DC54-AFEE4B8C2D12}|FirstFastEndpoints\\FirstFastEndpoints.csproj|solutionrelative:firstfastendpoints\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BCEFDF02-F790-6F0C-DC54-AFEE4B8C2D12}|FirstFastEndpoints\\FirstFastEndpoints.csproj|d:\\mydata\\projects\\fulstack\\todo-fastendpoints\\net-todo-fastendpoints\\firstfastendpoints\\shared\\caching\\rediscacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -94,7 +94,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -118,8 +118,7 @@
               "RelativeToolTip": "FirstFastEndpoints\\Shared\\Caching\\RedisCacheService.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAAAAsAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T11:29:55.564Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-30T11:29:55.564Z"
             },
             {
               "$type": "Document",
@@ -131,8 +130,7 @@
               "RelativeToolTip": "FirstFastEndpoints\\Features\\Todo\\DeleteTodo\\Endpoint.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T10:57:41.452Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-11T10:57:41.452Z"
             },
             {
               "$type": "Document",
@@ -144,25 +142,24 @@
               "RelativeToolTip": "FirstFastEndpoints\\Features\\Todo\\GetAllTodos\\Response.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-25T05:03:18.593Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-25T05:03:18.593Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\MyData\\Projects\\Fulstack\\todo-fastendpoints\\net-todo-fastendpoints\\FirstFastEndpoints\\Api\\Program.cs",
               "RelativeDocumentMoniker": "FirstFastEndpoints\\Api\\Program.cs",
               "ToolTip": "D:\\MyData\\Projects\\Fulstack\\todo-fastendpoints\\net-todo-fastendpoints\\FirstFastEndpoints\\Api\\Program.cs",
               "RelativeToolTip": "FirstFastEndpoints\\Api\\Program.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAABUAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAFIAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-11T10:43:42.25Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Endpoint.cs",
               "DocumentMoniker": "D:\\MyData\\Projects\\Fulstack\\todo-fastendpoints\\net-todo-fastendpoints\\FirstFastEndpoints\\Features\\Todo\\GetAllTodos\\Endpoint.cs",
               "RelativeDocumentMoniker": "FirstFastEndpoints\\Features\\Todo\\GetAllTodos\\Endpoint.cs",
@@ -170,21 +167,19 @@
               "RelativeToolTip": "FirstFastEndpoints\\Features\\Todo\\GetAllTodos\\Endpoint.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAhwCsAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T10:43:09.985Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-11T10:43:09.985Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Endpoint.cs",
               "DocumentMoniker": "D:\\MyData\\Projects\\Fulstack\\todo-fastendpoints\\net-todo-fastendpoints\\FirstFastEndpoints\\Features\\Todo\\CreateTodo\\Endpoint.cs",
               "RelativeDocumentMoniker": "FirstFastEndpoints\\Features\\Todo\\CreateTodo\\Endpoint.cs",
               "ToolTip": "D:\\MyData\\Projects\\Fulstack\\todo-fastendpoints\\net-todo-fastendpoints\\FirstFastEndpoints\\Features\\Todo\\CreateTodo\\Endpoint.cs",
               "RelativeToolTip": "FirstFastEndpoints\\Features\\Todo\\CreateTodo\\Endpoint.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-15T04:31:14.867Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-15T04:31:14.867Z"
             },
             {
               "$type": "Document",
@@ -196,8 +191,7 @@
               "RelativeToolTip": "FirstFastEndpoints\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-06-24T04:26:02.181Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-24T04:26:02.181Z"
             },
             {
               "$type": "Document",
@@ -233,8 +227,7 @@
               "RelativeToolTip": "FirstFastEndpoints\\Features\\Todo\\GetTodoById\\Endpoint.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAxwB0AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T10:48:13.697Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-11T10:48:13.697Z"
             },
             {
               "$type": "Document",

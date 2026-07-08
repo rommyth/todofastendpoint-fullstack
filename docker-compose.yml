@@ -4,19 +4,44 @@ services:
     image: ghcr.io/rommyth/todofastendpoint-fullstack/backend:latest
     ports:
       - "5030:5030"
+    networks:
+      - app-network
+
   backend-2:
     # build: ./net-todo-fastendpoints
     image: ghcr.io/rommyth/todofastendpoint-fullstack/backend:latest
     ports:
       - "5031:5030"
+    networks:
+      - app-network/
 
   frontend:
     # build: ./client-todo-fastendpoints
     image: ghcr.io/rommyth/todofastendpoint-fullstack/frontend:latest
     ports:
       - "8000:80"
+    networks:
+      - app-network
 
   redis:
     image: redis:8-alpine
     ports:
       - 6379:6379
+    networks:
+      - app-network
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - app-network
+    depends_on:
+      - backend-1
+      - backend-2
+
+networks:
+  app-network:
