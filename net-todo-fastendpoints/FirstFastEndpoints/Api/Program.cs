@@ -81,7 +81,7 @@ var app = builder.Build();
 app.UseAuthentication();
 
 // Prometheus
-// app.UseHttpMetrics();
+app.UseHttpMetrics();
 app.MapMetrics();
 
 app.UseResponseCaching()
