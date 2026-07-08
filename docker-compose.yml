@@ -1,23 +1,23 @@
 services:
   backend-1:
-    # build: ./net-todo-fastendpoints
-    image: ghcr.io/rommyth/todofastendpoint-fullstack/backend:latest
+    build: ./net-todo-fastendpoints
+    # image: ghcr.io/rommyth/todofastendpoint-fullstack/backend:latest
     ports:
       - "5030:5030"
     networks:
       - app-network
 
   backend-2:
-    # build: ./net-todo-fastendpoints
-    image: ghcr.io/rommyth/todofastendpoint-fullstack/backend:latest
+    build: ./net-todo-fastendpoints
+    # image: ghcr.io/rommyth/todofastendpoint-fullstack/backend:latest
     ports:
       - "5031:5030"
     networks:
-      - app-network/
+      - app-network
 
   frontend:
-    # build: ./client-todo-fastendpoints
-    image: ghcr.io/rommyth/todofastendpoint-fullstack/frontend:latest
+    build: ./client-todo-fastendpoints
+    # image: ghcr.io/rommyth/todofastendpoint-fullstack/frontend:latest
     ports:
       - "8000:80"
     networks:

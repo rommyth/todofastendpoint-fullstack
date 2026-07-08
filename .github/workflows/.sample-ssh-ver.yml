@@ -1,0 +1,156 @@
+name: CI CD
+
+# Workflow ini jalan saat ada push atau pull request ke branch main.
+# Pull request hanya menjalankan pengecekan build.
+# Push ke main menjalankan build, push image ke GHCR, lalu deploy ke VM.
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+# Permission ini dibutuhkan agar GitHub Actions bisa membaca repo
+# dan menulis Docker image ke GitHub Container Registry (GHCR).
+permissions:
+  contents: read
+  packages: write
+
+# Variable global untuk nama registry dan nama Docker image.
+# github.repository otomatis berisi: username/nama-repository.
+env:
+  REGISTRY: ghcr.io
+  BACKEND_IMAGE: ghcr.io/${{ github.repository }}/backend
+  FRONTEND_IMAGE: ghcr.io/${{ github.repository }}/frontend
+
+jobs:
+  backend:
+    name: Backend Build
+    runs-on: ubuntu-latest
+
+    # Semua command run di job backend akan dijalankan dari folder project .NET.
+    defaults:
+      run:
+        working-directory: net-todo-fastendpoints/FirstFastEndpoints
+
+    steps:
+      # Mengambil source code dari repository ke GitHub runner.
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      # Menyiapkan .NET SDK sesuai target project backend.
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: "10.0.x"
+
+      # Mengambil dependency NuGet backend.
+      - name: Restore backend dependencies
+        run: dotnet restore
+
+      # Mengecek apakah backend bisa compile dalam mode Release.
+      - name: Build backend
+        run: dotnet build --configuration Release --no-restore
+
+  frontend:
+    name: Frontend Build
+    runs-on: ubuntu-latest
+
+    # Semua command run di job frontend akan dijalankan dari folder React/Vite.
+    defaults:
+      run:
+        working-directory: client-todo-fastendpoints
+
+    steps:
+      # Mengambil source code dari repository ke GitHub runner.
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      # Menyiapkan Node.js untuk build frontend.
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: client-todo-fastendpoints/package-lock.json
+
+      # Install dependency berdasarkan package-lock.json.
+      - name: Install frontend dependencies
+        run: npm ci
+
+      # Mengecek lint frontend. Jika terlalu ketat saat belajar, step ini boleh dihapus sementara.
+      # - name: Lint frontend
+      #   run: npm run lint
+
+      # Mengecek apakah frontend bisa dibuat menjadi production build.
+      - name: Build frontend
+        run: npm run build
+
+  docker-publish:
+    name: Build and Push Docker Images
+    runs-on: ubuntu-latest
+    needs: [backend, frontend]
+
+    # Docker image hanya dipublish saat push ke main.
+    # Pull request tidak akan push image ke GHCR.
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+      # Mengambil source code agar Dockerfile dan source project tersedia.
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      # Login ke GHCR menggunakan token bawaan GitHub Actions.
+      # Ini dipakai untuk push image dari runner ke GHCR.
+      - name: Login to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login $REGISTRY -u ${{ github.actor }} --password-stdin
+
+      # Build image backend dengan 2 tag:
+      # latest = versi terbaru
+      # github.sha = versi spesifik berdasarkan commit
+      - name: Build backend image
+        run: |
+          docker build \
+            -t $BACKEND_IMAGE:latest \
+            -t $BACKEND_IMAGE:${{ github.sha }} \
+            ./net-todo-fastendpoints
+
+      # Build image frontend dengan 2 tag:
+      # latest = versi terbaru
+      # github.sha = versi spesifik berdasarkan commit
+      - name: Build frontend image
+        run: |
+          docker build \
+            -t $FRONTEND_IMAGE:latest \
+            -t $FRONTEND_IMAGE:${{ github.sha }} \
+            ./client-todo-fastendpoints
+
+      # Push semua tag image backend ke GHCR.
+      - name: Push backend image
+        run: docker push --all-tags $BACKEND_IMAGE
+
+      # Push semua tag image frontend ke GHCR.
+      - name: Push frontend image
+        run: docker push --all-tags $FRONTEND_IMAGE
+
+  deploy:
+    name: Deploy to Ubuntu VM
+    runs-on: ubuntu-latest
+    needs: [docker-publish]
+
+    # Deploy hanya berjalan setelah image berhasil dipush dari branch main.
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+      # GitHub runner akan SSH ke VM, lalu command di script dijalankan di VM.
+      - name: Deploy with SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd ~/todofastendpoint-fullstack
+            echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u "${{ secrets.GHCR_USERNAME }}" --password-stdin
+            docker compose pull
+            docker compose up -d
