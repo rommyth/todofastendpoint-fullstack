@@ -53,7 +53,7 @@ services:
     volumes:
       - grafana-data:/var/lib/grafana
     networks:
-      - app_network
+      - app-network
 
 networks:
   app-network:
