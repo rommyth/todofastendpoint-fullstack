@@ -7,8 +7,16 @@ using FastEndpoints.Security;
 using FirstFastEndpoints.Shared.Caching;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Prometheus;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Logger: Serilog
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .CreateLogger();
+
+builder.Host.UseSerilog();
 
 // DB
 builder.Services.AddDbContext<AppDbContext>(o => o.UseInMemoryDatabase("MyMomory"));
@@ -77,6 +85,8 @@ builder.Services
 builder.WebHost.UseUrls("http://0.0.0.0:5030");
 
 var app = builder.Build();
+
+app.UseSerilogRequestLogging();
 
 app.UseAuthentication();
 
