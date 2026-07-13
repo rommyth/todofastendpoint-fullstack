@@ -108,5 +108,6 @@ app.MapScalarApiReference(o => o.AddDocument("v1"));
 //}
 
 
-
+Log.Information("Application Starting");
 app.Run();
+Log.Information("Application Started");

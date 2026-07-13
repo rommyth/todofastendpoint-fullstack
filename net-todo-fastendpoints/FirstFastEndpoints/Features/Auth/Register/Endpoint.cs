@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace FirstFastEndpoints.Features.Auth.Register
 {
-    public class RegisterEndpoint(AppDbContext db) : Endpoint<RegisterRequest, RegisterResponse>
+    public class RegisterEndpoint(AppDbContext db, ILogger logger) : Endpoint<RegisterRequest, RegisterResponse>
     {
         public override void Configure()
         {
@@ -18,6 +18,8 @@ namespace FirstFastEndpoints.Features.Auth.Register
 
         public override async Task HandleAsync(RegisterRequest req, CancellationToken ct)
         {
+            logger.LogInformation("Register attempt for {Email}", req.Email);
+
             var exist = await db.Users.AnyAsync(x => x.Email == req.Email);
             if (exist)
             {

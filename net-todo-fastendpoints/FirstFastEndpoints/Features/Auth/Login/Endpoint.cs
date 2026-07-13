@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FirstFastEndpoints.Features.Auth.Login
 {
-    public class LoginEndpoint(AppDbContext db, IConfiguration configuration) : Endpoint<LoginRequest, LoginResponse>
+    public class LoginEndpoint(AppDbContext db, IConfiguration configuration, ILogger logger) : Endpoint<LoginRequest, LoginResponse>
     {
         public override void Configure()
         {
@@ -20,6 +20,8 @@ namespace FirstFastEndpoints.Features.Auth.Login
 
         public override async Task HandleAsync(LoginRequest req, CancellationToken ct)
         {
+            logger.LogInformation("Login attempt for {Email}", req.Email);
+
             var user = await db.Users.FirstOrDefaultAsync(x => x.Email == req.Email);
             if (user is null)
             {
