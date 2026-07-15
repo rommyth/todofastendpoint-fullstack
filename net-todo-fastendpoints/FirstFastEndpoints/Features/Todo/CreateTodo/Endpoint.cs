@@ -14,7 +14,7 @@ namespace FirstFastEndpoints.Features.Todo.CreateTodo
         {
             Post("/todos");
             AuthSchemes(JwtBearerDefaults.AuthenticationScheme);
-            PreProcessor<LoggiingPreProcessor<CreateTodoRequest>>();
+            //PreProcessor<LoggiingPreProcessor<CreateTodoRequest>>();
 
             Throttle(hitLimit: 20, durationSeconds: 60);
 

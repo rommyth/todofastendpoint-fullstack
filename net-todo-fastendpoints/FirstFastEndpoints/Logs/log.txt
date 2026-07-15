@@ -1,0 +1,223 @@
+2026-07-14 13:57:24.353 +07:00 [INF] Registered 8 endpoints in 308 milliseconds.
+2026-07-14 13:57:24.711 +07:00 [INF] Application Starting
+2026-07-14 13:58:10.607 +07:00 [INF] Application Started
+2026-07-14 13:58:40.562 +07:00 [INF] Registered 8 endpoints in 282 milliseconds.
+2026-07-14 13:58:40.657 +07:00 [INF] Application Starting
+2026-07-14 13:59:06.610 +07:00 [INF] Application Started
+2026-07-14 13:59:16.510 +07:00 [INF] Registered 8 endpoints in 304 milliseconds.
+2026-07-14 13:59:16.609 +07:00 [INF] Application Starting
+2026-07-14 13:59:40.670 +07:00 [INF] Application Started
+2026-07-14 13:59:45.643 +07:00 [INF] Registered 8 endpoints in 294 milliseconds.
+2026-07-14 14:01:44.424 +07:00 [INF] Registered 8 endpoints in 301 milliseconds.
+2026-07-14 14:03:24.521 +07:00 [INF] Registered 8 endpoints in 506 milliseconds.
+2026-07-14 14:08:06.511 +07:00 [INF] Registered 8 endpoints in 362 milliseconds.
+2026-07-14 14:10:47.869 +07:00 [INF] Registered 8 endpoints in 328 milliseconds.
+2026-07-14 14:11:30.859 +07:00 [INF] Registered 8 endpoints in 334 milliseconds.
+2026-07-14 14:13:08.346 +07:00 [INF] Registered 8 endpoints in 338 milliseconds.
+2026-07-14 14:13:38.288 +07:00 [INF] Registered 8 endpoints in 376 milliseconds.
+2026-07-14 14:14:45.156 +07:00 [INF] Registered 8 endpoints in 939 milliseconds.
+2026-07-14 14:17:14.050 +07:00 [INF] Registered 8 endpoints in 402 milliseconds.
+2026-07-14 14:22:02.876 +07:00 [INF] HTTP GET /scalar responded 302 in 98.4099 ms
+2026-07-14 14:22:03.064 +07:00 [INF] HTTP GET /scalar/ responded 200 in 170.1177 ms
+2026-07-14 14:22:03.111 +07:00 [INF] HTTP GET /scalar/scalar.aspnetcore.js responded 200 in 14.2854 ms
+2026-07-14 14:22:03.140 +07:00 [INF] HTTP GET /scalar/scalar.js responded 200 in 43.3510 ms
+2026-07-14 14:22:03.568 +07:00 [INF] HTTP GET /openapi/v1.json responded 200 in 43.1509 ms
+2026-07-14 14:22:04.352 +07:00 [INF] HTTP GET /scalar/favicon.svg responded 200 in 0.6164 ms
+2026-07-14 14:23:31.809 +07:00 [INF] Registered 8 endpoints in 348 milliseconds.
+2026-07-14 14:24:07.583 +07:00 [INF] HTTP GET /scalar/ responded 200 in 197.9553 ms
+2026-07-14 14:24:07.624 +07:00 [INF] HTTP GET /scalar/scalar.aspnetcore.js responded 200 in 10.2456 ms
+2026-07-14 14:24:07.637 +07:00 [INF] HTTP GET /scalar/scalar.js responded 200 in 23.0840 ms
+2026-07-14 14:24:08.076 +07:00 [INF] HTTP GET /openapi/v1.json responded 200 in 42.2584 ms
+2026-07-14 14:24:32.138 +07:00 [INF] HTTP POST /api/register responded 400 in 88.3154 ms
+2026-07-14 14:24:38.356 +07:00 [INF] HTTP POST /api/register responded 200 in 1005.1672 ms
+2026-07-14 14:30:55.587 +07:00 [INF] Registered 8 endpoints in 321 milliseconds.
+2026-07-14 14:30:55.944 +07:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5030: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-07-14 14:31:36.495 +07:00 [INF] Registered 8 endpoints in 360 milliseconds.
+2026-07-14 14:31:39.788 +07:00 [INF] HTTP GET /scalar responded 302 in 47.1126 ms
+2026-07-14 14:31:39.961 +07:00 [INF] HTTP GET /scalar/ responded 200 in 157.2381 ms
+2026-07-14 14:31:40.018 +07:00 [INF] HTTP GET /scalar/scalar.aspnetcore.js responded 200 in 12.8517 ms
+2026-07-14 14:31:40.034 +07:00 [INF] HTTP GET /scalar/scalar.js responded 200 in 31.8703 ms
+2026-07-14 14:31:40.481 +07:00 [INF] HTTP GET /openapi/v1.json responded 200 in 40.3024 ms
+2026-07-14 14:31:41.259 +07:00 [INF] HTTP GET /scalar/favicon.svg responded 200 in 1.0000 ms
+2026-07-14 14:31:41.266 +07:00 [INF] HTTP GET /scalar/favicon.svg responded 304 in 0.6265 ms
+2026-07-14 14:32:24.865 +07:00 [INF] Registered 8 endpoints in 287 milliseconds.
+2026-07-14 14:33:29.199 +07:00 [INF] HTTP GET /scalar/ responded 200 in 232.0185 ms
+2026-07-14 14:33:29.269 +07:00 [INF] HTTP GET /scalar/scalar.aspnetcore.js responded 200 in 31.0672 ms
+2026-07-14 14:33:29.283 +07:00 [INF] HTTP GET /scalar/scalar.js responded 200 in 45.4547 ms
+2026-07-14 14:33:29.699 +07:00 [INF] HTTP GET /openapi/v1.json responded 200 in 41.4530 ms
+2026-07-14 14:33:58.026 +07:00 [INF] HTTP POST /api/register responded 200 in 881.5232 ms
+2026-07-14 14:34:10.606 +07:00 [INF] HTTP POST /api/login responded 200 in 174.8247 ms
+2026-07-14 14:35:46.985 +07:00 [ERR] Exception occurred while processing message.
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: SocketFailure (ReadEndOfStream, 0-read, last-recv: 0) on localhost:6379/Interactive, Flushing/NotStarted, last: ECHO, origin: OnEstablishingAsync, outstanding: 12, last-read: 2s ago, last-write: 0s ago, unanswered-write: 0s ago, keep-alive: 60s, state: ConnectedEstablishing, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 0, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 1, serverEndpoint: localhost:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: DESKTOP-QKAKMKB(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=0,Free=32767,Min=16,Max=32767), POOL: (Threads=7,QueuedItems=0,CompletedItems=461,Timers=5), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: SocketFailure (ReadEndOfStream, 0-read, last-recv: 0) on localhost:6379/Interactive, Flushing/NotStarted, last: ECHO, origin: OnEstablishingAsync, outstanding: 12, last-read: 2s ago, last-write: 0s ago, unanswered-write: 0s ago, keep-alive: 60s, state: ConnectedEstablishing, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at Pipelines.Sockets.Unofficial.Internal.Throw.Socket(Int32 errorCode) in /_/src/Pipelines.Sockets.Unofficial/Internal/Throw.cs:line 59
+   at Pipelines.Sockets.Unofficial.SocketAwaitableEventArgs.<GetResult>g__ThrowSocketException|10_0(SocketError e) in /_/src/Pipelines.Sockets.Unofficial/SocketAwaitableEventArgs.cs:line 86
+   at Pipelines.Sockets.Unofficial.SocketAwaitableEventArgs.GetResult() in /_/src/Pipelines.Sockets.Unofficial/SocketAwaitableEventArgs.cs:line 79
+   at Pipelines.Sockets.Unofficial.SocketConnection.DoSendAsync() in /_/src/Pipelines.Sockets.Unofficial/SocketConnection.Send.cs:line 64
+   at System.IO.Pipelines.Pipe.GetFlushResult(FlushResult& result)
+   at System.IO.Pipelines.Pipe.PrepareFlushUnsynchronized(CompletionData& completionData, ValueTask`1& result, CancellationToken cancellationToken)
+   at System.IO.Pipelines.Pipe.FlushAsync(CancellationToken cancellationToken)
+   at Pipelines.Sockets.Unofficial.SocketConnection.WrappedWriter.FlushAsync(CancellationToken cancellationToken) in /_/src/Pipelines.Sockets.Unofficial/SocketConnection.cs:line 432
+   at StackExchange.Redis.PhysicalConnection.FlushAsync() in /_/src/StackExchange.Redis/PhysicalConnection.cs:line 324
+   at StackExchange.Redis.ServerEndPoint.HandshakeAsync(PhysicalConnection connection, ILogger log) in /_/src/StackExchange.Redis/ServerEndPoint.cs:line 1074
+   at StackExchange.Redis.ServerEndPoint.<OnEstablishingAsync>g__OnEstablishingAsyncAwaited|110_0(PhysicalConnection connection, Task handshake) in /_/src/StackExchange.Redis/ServerEndPoint.cs:line 647
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at FirstFastEndpoints.Shared.Caching.RedisCacheService.KeyExistAsync(String key) in D:\MyData\Projects\Fulstack\todo-fastendpoints\net-todo-fastendpoints\FirstFastEndpoints\Shared\Caching\RedisCacheService.cs:line 25
+   at Program.<>c.<<<Main>$>b__0_10>d.MoveNext() in D:\MyData\Projects\Fulstack\todo-fastendpoints\net-todo-fastendpoints\FirstFastEndpoints\Api\Program.cs:line 66
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2026-07-14 14:35:47.048 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: SocketFailure (ReadEndOfStream, 0-read, last-recv: 0) on localhost:6379/Interactive, Flushing/NotStarted, last: ECHO, origin: OnEstablishingAsync, outstanding: 12, last-read: 2s ago, last-write: 0s ago, unanswered-write: 0s ago, keep-alive: 60s, state: ConnectedEstablishing, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 0, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 1, serverEndpoint: localhost:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: DESKTOP-QKAKMKB(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=0,Free=32767,Min=16,Max=32767), POOL: (Threads=7,QueuedItems=0,CompletedItems=461,Timers=5), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: SocketFailure (ReadEndOfStream, 0-read, last-recv: 0) on localhost:6379/Interactive, Flushing/NotStarted, last: ECHO, origin: OnEstablishingAsync, outstanding: 12, last-read: 2s ago, last-write: 0s ago, unanswered-write: 0s ago, keep-alive: 60s, state: ConnectedEstablishing, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at Pipelines.Sockets.Unofficial.Internal.Throw.Socket(Int32 errorCode) in /_/src/Pipelines.Sockets.Unofficial/Internal/Throw.cs:line 59
+   at Pipelines.Sockets.Unofficial.SocketAwaitableEventArgs.<GetResult>g__ThrowSocketException|10_0(SocketError e) in /_/src/Pipelines.Sockets.Unofficial/SocketAwaitableEventArgs.cs:line 86
+   at Pipelines.Sockets.Unofficial.SocketAwaitableEventArgs.GetResult() in /_/src/Pipelines.Sockets.Unofficial/SocketAwaitableEventArgs.cs:line 79
+   at Pipelines.Sockets.Unofficial.SocketConnection.DoSendAsync() in /_/src/Pipelines.Sockets.Unofficial/SocketConnection.Send.cs:line 64
+   at System.IO.Pipelines.Pipe.GetFlushResult(FlushResult& result)
+   at System.IO.Pipelines.Pipe.PrepareFlushUnsynchronized(CompletionData& completionData, ValueTask`1& result, CancellationToken cancellationToken)
+   at System.IO.Pipelines.Pipe.FlushAsync(CancellationToken cancellationToken)
+   at Pipelines.Sockets.Unofficial.SocketConnection.WrappedWriter.FlushAsync(CancellationToken cancellationToken) in /_/src/Pipelines.Sockets.Unofficial/SocketConnection.cs:line 432
+   at StackExchange.Redis.PhysicalConnection.FlushAsync() in /_/src/StackExchange.Redis/PhysicalConnection.cs:line 324
+   at StackExchange.Redis.ServerEndPoint.HandshakeAsync(PhysicalConnection connection, ILogger log) in /_/src/StackExchange.Redis/ServerEndPoint.cs:line 1074
+   at StackExchange.Redis.ServerEndPoint.<OnEstablishingAsync>g__OnEstablishingAsyncAwaited|110_0(PhysicalConnection connection, Task handshake) in /_/src/StackExchange.Redis/ServerEndPoint.cs:line 647
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at FirstFastEndpoints.Shared.Caching.RedisCacheService.KeyExistAsync(String key) in D:\MyData\Projects\Fulstack\todo-fastendpoints\net-todo-fastendpoints\FirstFastEndpoints\Shared\Caching\RedisCacheService.cs:line 25
+   at Program.<>c.<<<Main>$>b__0_10>d.MoveNext() in D:\MyData\Projects\Fulstack\todo-fastendpoints\net-todo-fastendpoints\FirstFastEndpoints\Api\Program.cs:line 66
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationServiceImpl.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authorization.Policy.PolicyEvaluator.AuthenticateAsync(AuthorizationPolicy policy, HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-07-14 14:36:07.743 +07:00 [INF] HTTP POST /api/todos responded 201 in 91.1094 ms
+2026-07-14 14:36:20.666 +07:00 [INF] HTTP GET /api/todos responded 200 in 68.4116 ms
+2026-07-14 14:36:21.381 +07:00 [INF] HTTP GET /api/todos responded 200 in 7.3078 ms
+2026-07-14 14:36:21.904 +07:00 [INF] HTTP GET /api/todos responded 200 in 2.1648 ms
+2026-07-14 14:36:22.896 +07:00 [INF] HTTP GET /api/todos responded 200 in 2.4104 ms
+2026-07-14 14:37:48.388 +07:00 [INF] Registered 8 endpoints in 374 milliseconds.
+2026-07-14 14:37:48.525 +07:00 [INF] Application Starting
+2026-07-14 14:37:52.252 +07:00 [INF] HTTP GET /scalar/ responded 200 in 224.5233 ms
+2026-07-14 14:37:52.322 +07:00 [INF] HTTP GET /scalar/scalar.aspnetcore.js responded 200 in 13.5458 ms
+2026-07-14 14:37:52.339 +07:00 [INF] HTTP GET /scalar/scalar.js responded 200 in 30.1794 ms
+2026-07-14 14:37:52.464 +07:00 [INF] HTTP GET /scalar/favicon.svg responded 200 in 1.1430 ms
+2026-07-14 14:37:52.474 +07:00 [INF] HTTP GET /openapi/v1.json responded 200 in 49.8061 ms
+2026-07-14 14:38:35.158 +07:00 [INF] Registered 8 endpoints in 241 milliseconds.
+2026-07-14 14:38:35.243 +07:00 [INF] Application Starting
+2026-07-14 14:39:56.485 +07:00 [INF] Application Started
+2026-07-14 14:40:01.205 +07:00 [INF] Registered 8 endpoints in 222 milliseconds.
+2026-07-14 14:40:01.283 +07:00 [INF] Application Starting
+2026-07-14 14:40:01.284 +07:00 [INF] Running on http://0.0.0.0:5030
+2026-07-14 14:40:10.536 +07:00 [INF] HTTP GET /scalar/ responded 200 in 168.1426 ms
+2026-07-14 14:40:10.589 +07:00 [INF] HTTP GET /scalar/scalar.aspnetcore.js responded 200 in 8.1150 ms
+2026-07-14 14:40:10.603 +07:00 [INF] HTTP GET /scalar/scalar.js responded 200 in 22.4582 ms
+2026-07-14 14:40:10.712 +07:00 [INF] HTTP GET /scalar/favicon.svg responded 200 in 0.7221 ms
+2026-07-14 14:40:11.296 +07:00 [INF] HTTP GET /openapi/v1.json responded 200 in 612.7454 ms
+2026-07-14 14:40:17.597 +07:00 [INF] HTTP GET /metrics responded 200 in 83.1662 ms
+2026-07-14 14:40:17.676 +07:00 [INF] HTTP GET /favicon.ico responded 404 in 1.9246 ms
+2026-07-14 14:40:39.563 +07:00 [INF] HTTP GET /metrics responded 200 in 6.3813 ms
+2026-07-14 14:41:03.091 +07:00 [INF] HTTP GET /health responded 200 in 4.7339 ms
+2026-07-14 14:43:50.030 +07:00 [INF] Application Started
+2026-07-14 15:58:00.321 +07:00 [INF] Registered 8 endpoints in 264 milliseconds.
+2026-07-14 15:58:00.410 +07:00 [INF] Application Starting
+2026-07-14 15:58:00.412 +07:00 [INF] Running on http://0.0.0.0:5030
+2026-07-14 15:58:16.596 +07:00 [INF] HTTP GET /health responded 200 in 41.9103 ms
+2026-07-14 15:58:20.301 +07:00 [INF] HTTP GET /health responded 200 in 2.6582 ms
+2026-07-14 15:58:30.578 +07:00 [INF] HTTP GET /scalar responded 302 in 5.4112 ms
+2026-07-14 15:58:30.717 +07:00 [INF] HTTP GET /scalar/ responded 200 in 132.7463 ms
+2026-07-14 15:58:30.767 +07:00 [INF] HTTP GET /scalar/scalar.aspnetcore.js responded 200 in 4.6287 ms
+2026-07-14 15:58:30.781 +07:00 [INF] HTTP GET /scalar/scalar.js responded 200 in 20.6923 ms
+2026-07-14 15:58:31.749 +07:00 [INF] HTTP GET /openapi/v1.json responded 200 in 606.9347 ms
+2026-07-14 15:58:38.814 +07:00 [INF] HTTP GET /health responded 200 in 0.2803 ms
+2026-07-14 15:58:46.669 +07:00 [INF] HTTP GET /health/live responded 404 in 0.3462 ms
+2026-07-14 16:03:33.998 +07:00 [INF] Application Started
+2026-07-14 16:08:33.226 +07:00 [INF] Registered 8 endpoints in 239 milliseconds.
+2026-07-14 16:08:33.310 +07:00 [INF] Application Starting
+2026-07-14 16:08:33.312 +07:00 [INF] Running on http://0.0.0.0:5030
+2026-07-14 16:08:40.260 +07:00 [INF] HTTP GET /health/live responded 404 in 39.2963 ms
+2026-07-14 16:08:51.134 +07:00 [INF] HTTP GET /health responded 200 in 2139.2816 ms
+2026-07-14 16:09:22.125 +07:00 [ERR] Health check redis with status "Unhealthy" completed after 5182.2922ms with message 'null'
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: SocketClosed (ReadEndOfStream, last-recv: 0) on localhost:6379/Interactive, Idle/MarkProcessed, last: PING, origin: ReadFromPipe, outstanding: 0, last-read: 0s ago, last-write: 22s ago, keep-alive: 60s, state: ConnectedEstablished, mgr: 8 of 10 available, in: 0, in-pipe: 0, out-pipe: 0, last-heartbeat: 1s ago, last-mbeat: 1s ago, global: 1s ago, v: 2.7.27.49176, command=PING, timeout: 5000, inst: 0, qu: 1, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 4, serverEndpoint: localhost:6379, conn-sec: n/a, aoc: 1, mc: 1/1/0, mgr: 10 of 10 available, clientName: DESKTOP-QKAKMKB(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=0,Free=32767,Min=16,Max=32767), POOL: (Threads=4,QueuedItems=0,CompletedItems=184,Timers=3), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: SocketClosed (ReadEndOfStream, last-recv: 0) on localhost:6379/Interactive, Idle/MarkProcessed, last: PING, origin: ReadFromPipe, outstanding: 0, last-read: 0s ago, last-write: 22s ago, keep-alive: 60s, state: ConnectedEstablished, mgr: 8 of 10 available, in: 0, in-pipe: 0, out-pipe: 0, last-heartbeat: 1s ago, last-mbeat: 1s ago, global: 1s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 75
+2026-07-14 16:09:22.124 +07:00 [ERR] Health check redis with status "Unhealthy" completed after 655.4891ms with message 'null'
+System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'Connection is being disposed'.
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 75
+2026-07-14 16:09:22.136 +07:00 [ERR] HTTP GET /health responded 503 in 5201.8862 ms
+2026-07-14 16:09:22.137 +07:00 [ERR] HTTP GET /health responded 503 in 673.7971 ms
+2026-07-14 16:09:40.959 +07:00 [INF] Application Started
+2026-07-14 16:09:45.629 +07:00 [INF] Registered 8 endpoints in 274 milliseconds.
+2026-07-14 16:09:45.736 +07:00 [INF] Application Starting
+2026-07-14 16:09:45.738 +07:00 [INF] Running on http://0.0.0.0:5030
+2026-07-14 16:09:48.918 +07:00 [INF] HTTP GET /health responded 200 in 43.6261 ms
+2026-07-14 16:09:50.641 +07:00 [INF] HTTP GET /health responded 200 in 2.8429 ms
+2026-07-14 16:09:54.335 +07:00 [INF] Application Started
+2026-07-14 16:10:28.421 +07:00 [INF] Registered 8 endpoints in 267 milliseconds.
+2026-07-14 16:10:28.516 +07:00 [INF] Application Starting
+2026-07-14 16:10:28.518 +07:00 [INF] Running on http://0.0.0.0:5030
+2026-07-14 17:02:39.514 +07:00 [INF] Application Started
+2026-07-14 17:26:07.050 +07:00 [INF] Registered 8 endpoints in 233 milliseconds.
+2026-07-14 17:26:07.128 +07:00 [INF] Application Starting
+2026-07-14 17:26:07.130 +07:00 [INF] Running on http://0.0.0.0:5030
+2026-07-14 17:26:14.288 +07:00 [ERR] Health check redis with status "Unhealthy" completed after 3632.9852ms with message 'Healthcheck timed out'
+2026-07-14 17:26:14.332 +07:00 [ERR] HTTP GET /health responded 503 in 3713.4612 ms
+2026-07-14 17:26:20.302 +07:00 [ERR] Health check redis with status "Unhealthy" completed after 6015.1237ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 620
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-14 17:26:20.315 +07:00 [ERR] HTTP GET /health responded 503 in 6031.4324 ms
+2026-07-14 17:27:08.838 +07:00 [INF] HTTP GET /health responded 200 in 2036.1793 ms
+2026-07-14 17:27:12.698 +07:00 [INF] HTTP GET /health responded 200 in 2.8123 ms
+2026-07-14 17:27:14.777 +07:00 [INF] HTTP GET /health responded 200 in 2.2149 ms
+2026-07-14 17:30:03.153 +07:00 [INF] Application Started
+2026-07-14 17:30:07.758 +07:00 [INF] Registered 8 endpoints in 316 milliseconds.
+2026-07-14 17:30:07.878 +07:00 [INF] Application Starting
+2026-07-14 17:30:07.880 +07:00 [INF] Running on http://0.0.0.0:5030
+2026-07-14 17:30:19.694 +07:00 [INF] Application Started
+2026-07-14 17:30:24.216 +07:00 [INF] Registered 8 endpoints in 308 milliseconds.
+2026-07-14 17:30:24.320 +07:00 [INF] Application Starting
+2026-07-14 17:30:24.323 +07:00 [INF] Running on http://0.0.0.0:5030
+2026-07-14 17:30:36.446 +07:00 [INF] HTTP GET /health responded 200 in 2192.1820 ms
+2026-07-14 17:32:56.788 +07:00 [INF] Application Started
+2026-07-14 17:33:01.237 +07:00 [INF] Registered 8 endpoints in 313 milliseconds.
+2026-07-14 17:33:01.336 +07:00 [INF] Application Starting
+2026-07-14 17:33:01.338 +07:00 [INF] Running on http://0.0.0.0:5030
+2026-07-14 17:33:05.572 +07:00 [INF] HTTP GET /health responded 200 in 2197.3756 ms
+2026-07-14 23:22:22.467 +07:00 [INF] Application Started

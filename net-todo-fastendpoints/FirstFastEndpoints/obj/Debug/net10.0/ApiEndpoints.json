@@ -27,6 +27,35 @@
   {
     "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
     "Method": "\u003CMapFastEndpoints\u003Eb__2_2",
+    "RelativePath": "api/logout",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "FirstFastEndpoints.Features.Auth.Logout.LogoutResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 403
+      }
+    ],
+    "EndpointName": "FirstFastEndpointsFeaturesAuthLogoutLogoutEnpoint"
+  },
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__2_2",
     "RelativePath": "api/register",
     "HttpMethod": "POST",
     "IsController": false,

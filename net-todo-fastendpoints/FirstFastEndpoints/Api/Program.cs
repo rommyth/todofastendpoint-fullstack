@@ -8,6 +8,8 @@ using FirstFastEndpoints.Shared.Caching;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Prometheus;
 using Serilog;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -82,9 +84,43 @@ builder.Services
         s.Version = "v1";
     });
 
+// Helath Checker
+builder.Services
+    .AddHealthChecks()
+    .AddRedis(builder.Configuration.GetValue<string>("Redis:Host")!);
+
 builder.WebHost.UseUrls("http://0.0.0.0:5030");
 
 var app = builder.Build();
+
+// Map Health Response
+ app.MapHealthChecks("/health", new HealthCheckOptions {
+     ResponseWriter = async (context, report) => {
+         context.Response.ContentType = "application/json";
+
+         var response = new
+         {
+             Status = report.Status.ToString(),
+             TimeStamp = DateTime.UtcNow,
+             TotalDuration = report.TotalDuration,
+             Checks = report.Entries.ToDictionary(
+                 entry => entry.Key,
+                 entry => new {
+                     Status = entry.Value.Status.ToString(),
+                     Description = entry.Value.Description,
+                     Duration = entry.Value.Duration,
+                     Exception = entry.Value.Exception?.Message
+             })
+         };
+
+         await context.Response.WriteAsync(
+             JsonSerializer.Serialize(response, new JsonSerializerOptions
+             {
+                 WriteIndented = true
+             })
+             );
+     }
+ });
 
 app.UseSerilogRequestLogging();
 
@@ -109,5 +145,6 @@ app.MapScalarApiReference(o => o.AddDocument("v1"));
 
 
 Log.Information("Application Starting");
+Log.Information("Running on http://0.0.0.0:5030");
 app.Run();
 Log.Information("Application Started");

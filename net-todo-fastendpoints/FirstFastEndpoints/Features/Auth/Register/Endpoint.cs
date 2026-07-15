@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace FirstFastEndpoints.Features.Auth.Register
 {
-    public class RegisterEndpoint(AppDbContext db, ILogger logger) : Endpoint<RegisterRequest, RegisterResponse>
+    public class RegisterEndpoint(AppDbContext db, ILogger<RegisterEndpoint> logger) : Endpoint<RegisterRequest, RegisterResponse>
     {
         public override void Configure()
         {
@@ -24,6 +24,7 @@ namespace FirstFastEndpoints.Features.Auth.Register
             if (exist)
             {
                 AddError(x => x.Email, "Email sudah digunakan");
+                logger.LogWarning("Register attempt failed for {Email}", req.Email);
                 await Send.ErrorsAsync();
                 return;
             }
@@ -35,12 +36,13 @@ namespace FirstFastEndpoints.Features.Auth.Register
                 Email = req.Email,
             };
             var hashedPassword = new PasswordHasher<User>().HashPassword(user, req.Password);
-            // var verifyPassword = new PasswordHasher<User>().VerifyHashedPassword(user, hashedPassword, req.Password);
 
             user.Password = hashedPassword;
 
             db.Users.Add(user);
             await db.SaveChangesAsync(ct);
+
+            logger.LogInformation("User registered successfully: {Email}", req.Email);
 
             await Send.OkAsync(new RegisterResponse
             {

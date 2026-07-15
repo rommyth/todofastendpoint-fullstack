@@ -240,6 +240,32 @@
         }
       }
     },
+    "/api/logout": {
+      "post": {
+        "tags": [
+          "Logout"
+        ],
+        "operationId": "FirstFastEndpointsFeaturesAuthLogoutLogoutEnpoint",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FirstFastEndpointsFeaturesAuthLogoutLogoutResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
     "/api/login": {
       "post": {
         "tags": [
@@ -505,6 +531,10 @@
             "nullable": false
           }
         }
+      },
+      "FirstFastEndpointsFeaturesAuthLogoutLogoutResponse": {
+        "type": "object",
+        "additionalProperties": false
       },
       "FirstFastEndpointsFeaturesAuthLoginLoginResponse": {
         "type": "object",
