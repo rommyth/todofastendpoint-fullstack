@@ -221,3 +221,18 @@ StackExchange.Redis.RedisConnectionException: It was not possible to connect to 
 2026-07-14 17:33:01.338 +07:00 [INF] Running on http://0.0.0.0:5030
 2026-07-14 17:33:05.572 +07:00 [INF] HTTP GET /health responded 200 in 2197.3756 ms
 2026-07-14 23:22:22.467 +07:00 [INF] Application Started
+2026-07-15 17:59:14.368 +07:00 [INF] Registered 8 endpoints in 818 milliseconds.
+2026-07-15 17:59:14.806 +07:00 [INF] Application Starting
+2026-07-15 17:59:14.810 +07:00 [INF] Running on http://0.0.0.0:5030
+2026-07-15 17:59:31.014 +07:00 [INF] HTTP GET /scalar responded 302 in 421.5891 ms
+2026-07-15 17:59:31.343 +07:00 [INF] HTTP GET /scalar/ responded 200 in 297.0414 ms
+2026-07-15 17:59:31.477 +07:00 [INF] HTTP GET /scalar/scalar.aspnetcore.js responded 200 in 18.9838 ms
+2026-07-15 17:59:31.604 +07:00 [INF] HTTP GET /scalar/scalar.js responded 200 in 149.3833 ms
+2026-07-15 17:59:32.554 +07:00 [INF] HTTP GET /scalar/favicon.svg responded 200 in 1.4822 ms
+2026-07-15 17:59:33.707 +07:00 [INF] HTTP GET /openapi/v1.json responded 200 in 1518.6626 ms
+2026-07-15 17:59:52.971 +07:00 [ERR] Health check redis with status "Unhealthy" completed after 203.389ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 620
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-15 17:59:53.042 +07:00 [ERR] HTTP GET /health responded 503 in 291.1643 ms

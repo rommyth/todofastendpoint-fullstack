@@ -89,7 +89,7 @@ builder.Services
     .AddHealthChecks()
     .AddRedis(builder.Configuration.GetValue<string>("Redis:Host")!);
 
-builder.WebHost.UseUrls("http://0.0.0.0:5030");
+builder.WebHost.UseUrls(builder.Configuration["Server:Host"]!);
 
 var app = builder.Build();
 
@@ -147,4 +147,3 @@ app.MapScalarApiReference(o => o.AddDocument("v1"));
 Log.Information("Application Starting");
 Log.Information("Running on http://0.0.0.0:5030");
 app.Run();
-Log.Information("Application Started");

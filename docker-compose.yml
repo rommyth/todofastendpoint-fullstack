@@ -2,6 +2,8 @@ services:
   backend-1:
     build: ./net-todo-fastendpoints
     # image: ghcr.io/rommyth/todofastendpoint-fullstack/backend:latest
+    env_file:
+      - ./net-todo-fastendpoints/FirstFastEndpoints/.env
     ports:
       - "5030:5030"
     networks:
@@ -10,6 +12,8 @@ services:
   backend-2:
     build: ./net-todo-fastendpoints
     # image: ghcr.io/rommyth/todofastendpoint-fullstack/backend:latest
+    env_file:
+      - ./net-todo-fastendpoints/FirstFastEndpoints/.env
     ports:
       - "5031:5030"
     networks:
